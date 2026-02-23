@@ -1,0 +1,147 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: Arial, Helvetica, sans-serif;
+  scroll-behavior: smooth;
+}
+
+body {
+  background: #050509;
+  color: white;
+  display: flex;
+}
+
+/* SIDEBAR */
+.sidebar {
+  width: 260px;
+  height: 100vh;
+  background: linear-gradient(180deg, #0b0b12, #050509);
+  padding: 40px 25px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  position: fixed;
+  border-right: 1px solid #111;
+}
+
+.sidebar nav {
+  display: flex;
+  flex-direction: column;
+  margin-top: 30px;
+}
+
+.sidebar nav a {
+  text-decoration: none;
+  color: #777;
+  margin-bottom: 20px;
+  transition: 0.3s;
+}
+
+.sidebar nav a:hover {
+  color: #5865F2;
+  padding-left: 8px;
+}
+
+/* ASSINATURA */
+.signature:hover {
+  color: #5865F2;
+  text-shadow: 0 0 10px #5865F2;
+}
+
+/* CONTEÚDO */
+.content {
+  margin-left: 260px;
+  width: 100%;
+}
+
+.section {
+  min-height: 100vh;
+  padding: 100px 80px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.hero {
+  background: radial-gradient(circle at center, rgba(88,101,242,0.1), transparent 70%);
+}
+
+/* BOTÕES */
+.btn,
+button {
+  padding: 15px 40px;
+  border: none;
+  border-radius: 50px;
+  background: linear-gradient(135deg, #5865F2, #404eed);
+  color: white;
+  cursor: pointer;
+  transition: 0.3s;
+  width: fit-content;
+}
+
+.btn:hover,
+button:hover {
+  transform: scale(1.1);
+  box-shadow: 0 0 25px #5865F2;
+}
+
+/* LOGO CYBER */
+.logo-container {
+  position: relative;
+  display: flex;
+  justify-content: center;
+}
+
+.logo-wrapper {
+  position: relative;
+  z-index: 2;
+}
+
+.logo-img {
+  width: 150px;
+  animation: float 4s ease-in-out infinite;
+  transition: 0.4s;
+}
+
+@keyframes float {
+  0% { transform: translateY(0px); }
+  50% { transform: translateY(-10px); }
+  100% { transform: translateY(0px); }
+}
+
+.logo-glow {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 170px;
+  height: 170px;
+  background: radial-gradient(circle, rgba(88,101,242,0.8), transparent 70%);
+  transform: translate(-50%, -50%);
+  border-radius: 50%;
+  animation: pulse 3s infinite;
+  z-index: -1;
+}
+
+@keyframes pulse {
+  0% { opacity: 0.7; transform: translate(-50%, -50%) scale(1); }
+  50% { opacity: 1; transform: translate(-50%, -50%) scale(1.2); }
+  100% { opacity: 0.7; transform: translate(-50%, -50%) scale(1); }
+}
+
+.logo-img.glitch {
+  animation: glitch 0.2s linear infinite;
+}
+
+@keyframes glitch {
+  0% { transform: translate(2px,0); }
+  50% { transform: translate(-2px,2px); }
+  100% { transform: translate(2px,-2px); }
+}
+
+#particles {
+  position: absolute;
+  width: 250px;
+  height: 250px;
+  z-index: 0;
+}
